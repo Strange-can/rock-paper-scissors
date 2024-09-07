@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scissors, paper, stone</title>
+</head>
+<body>
+
+    <script>
+       
+       
+       
+       function getHumanChoice() {
+    let userInput = window.prompt('scissors, paper or stone?', '').toLowerCase();
+    
+    if (userInput === 'scissors' || userInput === 'paper' || userInput === 'stone') {
+        return userInput;
+    } else {
+        alert('Invalid play, system defaults to \"scissors\" choice');
+        return 'scissors';
+    }
+}
+
+      
+       
+       
+
+       function computerInputGenerator() {
+         let comInput = Math.random();
+         if (comInput <= 0.33) {
+            alert('computer plays scissors')
+            return 'scissors';
+         }
+         else if (comInput <= 0.66) {
+            alert('computer plays paper')
+            return 'paper';
+         }
+         else {
+            alert('computer plays stone')
+            return 'stone';
+         }
+        }
+      let humanScore = 0
+      let computerScore = 0
+
+      function playRound( userInput, comInput ) {
+      if ( userInput === comInput) {
+         alert('draw! no points for either')
+      }
+      else if ( (userInput === 'scissors' && comInput === 'paper') ||
+                (userInput === 'paper' && comInput === 'stone') ||
+                (userInput === 'stone' && comInput === 'scissors') ) {
+                  alert('YOU WIN!!! +1 point')
+                  ++humanScore
+                }
+      else {
+         alert('you lose :( 1 point to computer')
+         ++computerScore
+      }
+   }
+       let userInput = getHumanChoice()
+       let comInput = computerInputGenerator()
+   playRound( userInput, comInput )
+   console.log( `${humanScore}(your score) - ${computerScore}(computer\'s score)` )
+    </script>
+    
+</body>
+</html>
