@@ -8,9 +8,8 @@
 <body>
 
     <script>
-       
-       
-       
+      
+       //user input function
        function getHumanChoice() {
     let userInput = window.prompt('scissors, paper or stone?', '').toLowerCase();
     
@@ -21,11 +20,8 @@
         return 'scissors';
     }
 }
-
-      
-       
-       
-
+     
+      // computer input function
        function computerInputGenerator() {
          let comInput = Math.random();
          if (comInput <= 0.33) {
@@ -41,16 +37,22 @@
             return 'stone';
          }
         }
+
+        //past score variable declaration
+      
+      function playGame() {
       let humanScore = 0
       let computerScore = 0
-
-      function playRound( userInput, comInput ) {
-      if ( userInput === comInput) {
+      //point determinant system and victory message
+      function playRound() {
+         let h = getHumanChoice()
+      let c = computerInputGenerator()
+      if ( h === c) {
          alert('draw! no points for either')
       }
-      else if ( (userInput === 'scissors' && comInput === 'paper') ||
-                (userInput === 'paper' && comInput === 'stone') ||
-                (userInput === 'stone' && comInput === 'scissors') ) {
+      else if ( (h === 'scissors' && c === 'paper') ||
+                (h === 'paper' && c === 'stone') ||
+                (h === 'stone' && c === 'scissors') ) {
                   alert('YOU WIN!!! +1 point')
                   ++humanScore
                 }
@@ -58,11 +60,25 @@
          alert('you lose :( 1 point to computer')
          ++computerScore
       }
+      console.log( `${humanScore}(your score) - ${computerScore}(computer\'s score)` )
    }
-       let userInput = getHumanChoice()
-       let comInput = computerInputGenerator()
-   playRound( userInput, comInput )
-   console.log( `${humanScore}(your score) - ${computerScore}(computer\'s score)` )
+   playRound()
+   playRound()
+   playRound()
+   playRound()
+   playRound()
+
+   if ( humanScore === computerScore ) {
+      return alert('It\'s a DRAW! Refresh the page to play again')
+   }
+   else if ( humanScore > computerScore ){
+      return alert('You are VICTORIOUS! Refresh the page to play again')
+   }
+   else {
+      return alert('You have been DEFEATED! Refresh the page to play again')
+   }
+}
+     playGame()
     </script>
     
 </body>
