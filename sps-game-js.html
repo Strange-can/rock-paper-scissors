@@ -8,7 +8,9 @@
 <body>
 
     <script>
-      
+       //Made by yours truly, Lincoln the Legend. Hello there if you're reading this,
+       //you can see your current score after a round in the dev tools console panel
+       
        //user input function
        function getHumanChoice() {
     let userInput = window.prompt('scissors, paper or stone?', '').toLowerCase();
@@ -38,26 +40,25 @@
          }
         }
 
-        //past score variable declaration
-      
+      // function to call for inputs and output final victor
       function playGame() {
       let humanScore = 0
       let computerScore = 0
-      //point determinant system and victory message
+      //point determinant system and round victory message
       function playRound() {
          let h = getHumanChoice()
       let c = computerInputGenerator()
       if ( h === c) {
-         alert('draw! no points for either')
+         alert('A tie for this round! no points for either')
       }
       else if ( (h === 'scissors' && c === 'paper') ||
                 (h === 'paper' && c === 'stone') ||
                 (h === 'stone' && c === 'scissors') ) {
-                  alert('YOU WIN!!! +1 point')
+                  alert('You win this round!!! +1 point')
                   ++humanScore
                 }
       else {
-         alert('you lose :( 1 point to computer')
+         alert('you lose this round :( 1 point to computer')
          ++computerScore
       }
       console.log( `${humanScore}(your score) - ${computerScore}(computer\'s score)` )
