@@ -4,16 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scissors, paper, stone</title>
+    <script src="game-script.js" defer></script>
 </head>
 <body>
+  <div class="options">
+   <button id="scissors">scissors</button>
+   <button id="paper">paper</button>
+   <button id="stone">stone</button>
+  </div>
 
+  <h2>First to 5 points win!</h2>
+  <p class="playerChoice">You chose:</p>
+  <p class="compChoice">Computer chose:</p>
+  <p class="victor-message"></p>
+  <p class="score"></p>
     <script>
        //Made by yours truly, Lincoln the Legend. Hello there if you're reading this,
        //you can see your current score after a round in the dev tools console panel
        
        //user input function
-       function getHumanChoice() {
+       /*function getHumanChoice() {
     let userInput = window.prompt('scissors, paper or stone?', '').toLowerCase();
+    
+    if (userInput === 'scissors' || userInput === 'paper' || userInput === 'stone') {
+        return userInput;
+    } else {
+        alert('Invalid play, system defaults to \"scissors\" choice');
+        return 'scissors';
+    }
+}*/
+/*function getHumanChoice() {
+    let userInput = playerOptions;
     
     if (userInput === 'scissors' || userInput === 'paper' || userInput === 'stone') {
         return userInput;
@@ -64,12 +85,12 @@
       console.log( `${humanScore}(your score) - ${computerScore}(computer\'s score)` )
    }
    playRound()
+   /*playRound()
    playRound()
    playRound()
-   playRound()
-   playRound()
+   playRound()*/
 
-   if ( humanScore === computerScore ) {
+   /*if ( humanScore === computerScore ) {
       return alert('It\'s a DRAW! Refresh the page to play again')
    }
    else if ( humanScore > computerScore ){
@@ -79,7 +100,7 @@
       return alert('You have been DEFEATED! Refresh the page to play again')
    }
 }
-     playGame()
+     playGame()*/
     </script>
     
 </body>
