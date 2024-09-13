@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 64px;
+}
+
+h2, .playerChoice, .compChoice, .victor-message, .score, .quote, .final-victor, .myStuff {
+    margin: 0;
+}

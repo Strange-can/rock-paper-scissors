@@ -32,7 +32,6 @@ function getHumanChoice() {
       // computer input function
        function computerInputGenerator() {
          let comInput = Math.random();
-         console.log(comInput)
          if (comInput <= 0.33) {
             return compPlay = 'scissors';
          }
@@ -68,20 +67,20 @@ function getHumanChoice() {
       }
       victorMessage.textContent = `${message}`
       score.textContent= `${humanScore}(your score) - ${computerScore}(computer\'s score)`
-   }
-   /*playRound()
-   playRound()
-   playRound()
-   playRound()
-   playRound()*/
 
-   /*if ( humanScore === computerScore ) {
-      return alert('It\'s a DRAW! Refresh the page to play again')
+      let final = document.querySelector(".final-victor")
+      let quote = document.querySelector(".quote")
+      let me = document.querySelector(".myStuff")
+      if ( humanScore === 5 && computerScore < 5) {
+         final.textContent = 'You\'re the CHAMPION!!! (refresh to play again)'
+         final.style.color = "green"
+         quote.textContent = '\"One machine can do the work of fifty ordinary men.  No machine can do the work of one extraordinary man.\" - Elbert Hubbard'
+         me.textContent = '"hi." - Lincoln the Legend'
+      }
+      else if ( computerScore === 5 && humanScore < 5) {
+         final.textContent = 'Computer emerges victorious (refresh to play again)'
+         final.style.color = "red"
+         quote.textContent = '“AI will be able to do everything a human can – maybe even better.” – Andrew Ng'
+         me.textContent = '"hi." - Lincoln the Legend'
+      }
    }
-   else if ( humanScore > computerScore ){
-      return alert('You are VICTORIOUS! Refresh the page to play again')
-   }
-   else {
-      return alert('You have been DEFEATED! Refresh the page to play again')
-   }
-}*/
